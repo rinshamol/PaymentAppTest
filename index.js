@@ -19,7 +19,7 @@ const pool = new Pool({
 
 // TEST API
 app.get("/", (req, res) => {
-  res.send("Payment API running");
+  res.json("Payment API running");
 });
 
 // GET customers
