@@ -66,6 +66,7 @@ const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || 'localhost';
 const PROTOCOL = process.env.PROTOCOL || 'http';
 
-app.listen(PORT, () => {
-  console.log(`Server running at ${PROTOCOL}://${HOST}:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
