@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require("pg");
-
+require("dotenv").config();
 const app = express();
 
 app.use(cors());
@@ -9,13 +9,14 @@ app.use(express.json());
 
 // DATABASE CONNECTION 
 const pool = new Pool({
-  user: 'postgres',
-  host: 'payment-db.c7ay86oy82u4.ap-south-1.rds.amazonaws.com',
-  database: 'paymentdb',
-  password: 'Rinsha123',
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
   ssl: { rejectUnauthorized: false }
 });
+
 
 // TEST API
 app.get("/", (req, res) => {
