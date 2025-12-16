@@ -57,6 +57,7 @@ app.get("/payments/:account", async (req, res) => {
      WHERE c.account_number=$1`,
     [req.params.account]
   );
+  console.log("test")
   res.json(result.rows);
 });
 
