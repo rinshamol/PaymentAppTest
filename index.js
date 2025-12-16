@@ -19,8 +19,9 @@ const pool = new Pool({
 
 // TEST API
 app.get("/", (req, res) => {
-  res.send("Payment API running");
+  res.json({ message: "Payment API running" });
 });
+
 
 // GET customers
 app.get("/customers", async (req, res) => {
